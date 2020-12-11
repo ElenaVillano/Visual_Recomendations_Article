@@ -2617,9 +2617,9 @@
 \@IEEEcompsocconfonly{\def\figurename{Gambar}}
 \def\partname{Part}
 \def\appendixname{Lampiran}
-\def\abstractname{Ringkasan}
+\def\abstractname{Resumen}
 % IEEE specific names
-\def\IEEEkeywordsname{Kata Kunci}
+\def\IEEEkeywordsname{Palabras clave:}
 \def\IEEEproofname{Proof}
 
 
