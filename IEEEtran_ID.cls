@@ -2612,7 +2612,7 @@
 \def\listtablename{Daftar Tabel}
 \def\refname{Daftar Pustaka}
 \def\indexname{Index}
-\def\figurename{Gambar}
+\def\figurename{Figura}
 \def\tablename{TABEL}
 \@IEEEcompsocconfonly{\def\figurename{Gambar}}
 \def\partname{Part}

@@ -20,10 +20,7 @@ dataz %>%
   facet_wrap(~dataset, ncol=3)
 
 categories <- c('away','dino','slant down')
-
-dino <- filter(datasaurus_dozen, dataset=='dino'| dataset=='slant_down')
-
-away <- filter(datasaurus_dozen, dataset=='away' )
+holi <- filter(datasaurus_dozen, dataset=='dino'| dataset=='slant_down' | dataset=='away' )
 
 slant <- filter(datasaurus_dozen, dataset=='slant_down')
 
@@ -44,7 +41,7 @@ ggplot(holi, aes(x=x, y=y, colour=dataset))+
         axis.title.y = element_text(size=3),
         strip.text = element_text(size=3)) +
   scale_color_manual(values = colores)+
-  ggsave("datasaurus.png",units = 'cm',width = 5,height = 3.5)
+  ggsave("datasaurus.png",units = 'cm',width = 5,height = 2.5)
 
 
 

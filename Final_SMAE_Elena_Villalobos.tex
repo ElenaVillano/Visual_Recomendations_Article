@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{hyperref}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
@@ -27,7 +28,7 @@
 \begin{document}
 
 % Elemen judul proposal
-\title{\huge{La importancia visualización de datos \\ 
+\title{\huge{Exploración y visualización de datos, \\ 
 y algunas recomendaciones.} % Elemen subjudul proposal
 }
 
@@ -41,188 +42,107 @@ y algunas recomendaciones.} % Elemen subjudul proposal
 \maketitle
 \thispagestyle{fancy}
 
-% Elemen ringkasan proposal
-\begin{abstract}
-La capacidad visual del ser humano para detectar patrones es muy grande por eso debemos aprovecharla
-\end{abstract}
-
-% Elemen kata kunci
-\begin{IEEEkeywords}
-Visualización de datos. 
-\end{IEEEkeywords}
+%% Elemen ringkasan proposal
+%\begin{abstract}
+%La capacidad visual del ser humano para detectar patrones es muy grande por eso debemos aprovecharla
+%\end{abstract}
+%
+%% Elemen kata kunci
+%\begin{IEEEkeywords}
+%Visualización de datos. 
+%\end{IEEEkeywords}
 
 
 % Elemen bagian proposal ditulis sebagai "section"
 % Sedangkan elemen subbagian ditulis sebagai "subsection"
+\bigskip
+\bigskip
 
-En el análisis de datos mejor conocido como el Graphical Exploratory Descriptive Análisis y el Exploratory Análisis siempre se debe de hacer antes de aplicar cualquier modelo o cualquier análisis estadístico. No pensar sólo en los modelos. Si no logras comprender el comportamiento de tus datos sin modelos puede que caigas en supuestos erroneos. Te permite ver si hay datos faltantes, si hay repetidos. Esto con el objetivo de conocer los datos. Parece que no se le da la importancia necesaria. 
+La Ciencia de datos nos ayuda a solucionar problemas en contextos reales. Ésta contiene muchos procedimientos que son esenciales para poder proponer mejores soluciones. Una parte de este proceso es la \textbf{Exploración de Datos}, que nos da una idea de la información, comportamiento y contexto de los datos que queremos evaluar. La información obtenida en esta etapa es de gran importancia y utilidad para contextualizarse el problema, que de no realizarse es casi seguro que los modelos que se evalúen lleguen a conclusiones erróneas. 
 
-\section{Capacidad humana de detectar patrones }
+Una de las principales fuentes de información en la exploración de datos, son los gráficos o las visualizaciones de los mismos. Éstos intentan aprovechar la gran capacidad de procesamiento visual que tenemos los humanos para exhibir de manera clara aspectos importantes, así como sintetizar la información relevante y presentarla de manera sencilla e intuitiva. 
 
-Los seres humanos somos muy buenos detectando patrones en los datos, entonces es aprovechar esta capacidad tan buena que tenemos para resumir información. 
+A continuación hablaremos de las variables y gráficos mas usuales que se utilizan cuando se comienza con el análisis exploratorio.
 
-\section{No sólo estadísticos descriptivos}
+\bigskip
 
-Cuarteto de Ascombe cuatro conjuntos de datos diferentes que tiene la misma media, la misma desviación estándar y la misma correlación pero que visualmente difieren demasiado en su visualización. Esto inspiró al Dazauris. El punto es que si hay que observarlos pero hay que observar también la distribución de los datos. 
+\subsection{Gráficos con variables numéricas}
 
-\section{No graficar sólo con boxplots}
+Todas las bases de datos tienen diferentes tipos de variables, una de las más comunes son las variables numéricas que describen una característica en términos de un valor numérico o una cantidad. Es decir, pueden tomar valores decimales y estar dentro de un intervalo, o pueden ser números enteros que nos permiten hacer conteos. Entre los gráficos más comunes y más utilizados para describir variables numéricas son los diagramas de caja o boxplots. Estos nos permiten apreciar a simple vista la dispersión de los valores de manera estandarizada a través de sus cuartiles como la mediana (figura 1). 
 
-Si bien estos son herramientas que te ayudan a conocer cómo se están distribuyendo tus datos, pueden ser engañosos, por lo que se recomienda acompañarlos de otros gráficos como histogramas o colocarle jitter al mismo. Gráfico de violín. 
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.25\textwidth]{boxplot.png}}
+	\caption{Gráfico de caja. Los cuartiles dividen el conjunto de datos de manera ordenada en partes iguales, en este caso se muesta el cuartil superior o cuartil 3, la mediana o cuartil 2, y el cuartil inferior o cuartil 1.}
+	\label{fig_sample}
+\end{figure}
+
+Además de los boxplots, también se pueden utilizar histogramas o jitter-plots. De hecho, se recomienda también usar otras representaciones gráficas, pues puede suceder que un mismo conjunto de métricas generadas en un boxplot, representen diferentes conjuntos de datos como se muestra en la figura 2. 
+
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.5\textwidth]{histograms.png}}
+	\caption{Cada letra es un conjunto de datos. Todos tienen los mismos valores de los cuartiles a pesar de ser conjuntos de datos muy diferentes.}
+	\label{fig_sample}
+\end{figure}
+
+Otro tipo de gráfico muy común con variables numéricas es el de dispersión o scatter-plot, el cual permite ver si existe o no una relación entre dos variables numéricas (figura 3). 
 
 
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.3\textwidth]{scatterplot.png}}
+	\caption{Diagrama de dispersión entre dos variables.}
+	\label{fig_sample}
+\end{figure}
 
-	\begin{table}[htbp]
-		\caption{Contoh tabel literatur}
-		\begin{center}
-		\begin{tabular}{|r|p{1.5cm}|p{1.8cm}|p{1.5cm}|p{1.5cm}|}
-			\hline
-			\textbf{\textit{No.}} & \textbf{\textit{Judul}} & \textbf{\textit{Penulis, Publikasi}} & \textbf{\textit{Tertulis}} & \textbf{\textit{Komentar}} \\
-			\hline
-			1 & Tuliskan judul literatur & Tuliskan nama penulis, nama 
-			jurnal/prosiding, volume/nomor, tahun, dsb. & Tuliskan apa yang 
-			tertulis dalam literatur yang disitasi, berikut halaman berapa & %
-			Tuliskan komentar terhadap apa yang disitasi \\[2ex]
-			\hline
-		\end{tabular}
-		\label{lit_table}
-		\end{center}
-	\end{table}
+\bigskip
+\bigskip
 
-	\begin{figure}[htbp]
-		\centerline{\includegraphics[width=0.49\textwidth]{litmap.png}}
-		\caption{Contoh peta literatur (\textit{literature map})}
-		\label{lit_map}
-	\end{figure}
+\newpage
 
-\section{Mostrar comparaciones}
+Generalmente a las variables numéricas se les toman medidas de tendencia y dispersión, de las más comunes son la media o el promedio y la desviación estándar (SD), respectivamente. Estas medidas son muy útiles pero se recomienda respaldarlas con gráficos. Por ejemplo, en la figura 4 se observan tres conjuntos de datos muy diferentes que producen la misma media, la misma desviación estándar e incluso la misma correlación. 
 
-Mostrar comparaciones, constrastes y diferencias
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.5\textwidth]{datasaurus.png}}
+	\caption{Datasaurus (media x=54.26, media y=47.83, SD x=16.76, SD y=26.93, correlación de Pearson=-0.06).}
+	\label{fig_sample}
+\end{figure}
 
-\section{Muestra datos multivariados}
 
-Cruza las variables. 
+\subsection{Gráficos con variables categóricas}
 
-\section{No PAY}
+Otro tipo de variables con las que comúnmente trabajamos son las categóricas, que indican la presencia o ausencia de un atributo, o son indicadores de pertenencia a un grupo u otro. Para este tipo de variables sólo se pueden hacer conteos, por lo que se recomienden gráficos que coloquen el número de observaciones hechas para cada categoría. El gráfico de barras (figura 5) es de los más comunes.
 
-No utilices pay nunca. 
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.3\textwidth]{barplot.png}}
+	\caption{Gráfico de barras, conteos para cada categoría a, b, c, d o e.}
+	\label{fig_sample}
+\end{figure}
+
+Existen otros tipos de variables como las de localización o temporales, así como muchas variaciones de gráficos e infinidad de representaciones visuales. Sin lugar a duda, la exploración de datos es uno de los aspectos más importantes e interesantes en los proyectos de ciencia de datos, pues está lleno de sorpresas, permite desarrollar creatividad, y reta a los científicos a expresar información de manera visual, sintetizada y que ayude a tomar decisiones en los siguientes pasos del proceso de investigación. 
+
+% lleno de creatividad que puede generar muchos \textit{insights} muy útiles. 
+
+\bigskip
+\bigskip
+
+\subsection*{Referencias:}
 
 \begin{itemize}
-	\item Atas = 19mm (0,75")
-	\item Bawah = 43mm (1,69")
-	\item Kiri = Kanan = 14,32mm (0,56")
+
+\item Seminario de Métodos Analíticos de la Empresa, Taller de visualización. 
+
+\item Matejka, J., \& Fitzmaurice, G. (2017, May). \textit{Same stats, different graphs: generating datasets with varied appearance and identical statistics through simulated annealing.} In Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems (pp. 1290-1294).
+
+\item Materia de Fundamentos en Estadística con Remuestreo, impartida por Teresa Ortiz \url{https://tereom.github.io/fundamentos/}
+
+\item Materia de Introducción a la Ciencia de Datos, impartida por Liliana Millán.
+
+\item \url{https://www.data-to-viz.com/}
+
+\item \url{https://www.r-graph-gallery.com/}
+
+
 \end{itemize}
 	
-Nunca. 
-
-\section{Realizar gráficos que se expliquen por sí solos}
-
-
-Realiza gráficos que se expliquen por sí solos, graficar variables por sí solas no te ayuda tanto a como si las graficas con comparación con otras variables. Mostrar contrastes, 
-
-
-\subsection{Format Gambar}
-	
-	Gambar diberi nomor dengan menggunakan angka Arab. Keterangan gambar harus dalam font biasa ukuran 8. Keterangan gambar dalam satu baris diletakkan di tengah (\textit{centered}), sedangkan keterangan multi-baris harus dirata kiri dan kanan. Keterangan gambar dengan nomor gambar harus ditempatkan setelah gambar terkait, seperti yang ditunjukkan pada Gambar \ref{fig_sample}.
-
-	\begin{figure}[htbp]
-		\centerline{\includegraphics[width=0.45\textwidth]{figure.png}}
-		\caption{Contoh keterangan gambar}
-		\label{fig_sample}
-	\end{figure}
-
-
-
-\subsection{Format Tabel}
-	
-	Tabel diberi nomor menggunakan angka romawi huruf besar. Keterangan tabel di tengah (\textit{centered}) dan dalam font biasa berukuran 8 dengan huruf kapital kecil. Setiap kata dalam keterangan tabel menggunakan huruf kapital, kecuali untuk kata-kata pendek seperti yang tercantum. Keterangan angka tabel ditempatkan sebelum tabel terkait, seperti yang ditunjukkan pada Tabel \ref{tbl_sample}.
-
-	\begin{table}[htbp]
-		\caption{Contoh keterangan tabel}
-		\begin{center}
-		\begin{tabular}{|c|c|c|c|}
-			\hline
-			\textbf{\textit{Judul kolom}} & \textbf{\textit{Judul kolom}} & \textbf{\textit{Judul kolom}}& \textbf{\textit{Judul kolom}} \\
-			\hline
-			& Contoh isian tabel$^{\mathrm{a}}$& &  \\[2ex]
-			\hline
-			\multicolumn{4}{l}{$^{\mathrm{a}}$Contoh catatan kaki pada tabel.}
-		\end{tabular}
-		\label{tbl_sample}
-		\end{center}
-	\end{table}
-
-
-
-
-\subsection{Format Persamaan/Rumus}
-	Persamaan secara berurutan diikuti dengan penomoran angka dalam tanda kurung dengan margin rata kanan, seperti dalam (1). Untuk Microsoft Word, gunakan \textit{equation editor} untuk membuat persamaan. Untuk membuat persamaan lebih rapat, gunakan tanda garis miring ( / ), fungsi pangkat, atau pangkat yang tepat. Gunakan tanda kurung untuk menghindari kerancuan dalam pemberian angka pecahan. Beri spasi tab dan tulis nomor persamaan dalam tanda kurung seperti tertulis pada Persamaan \ref{equation1} berikut: 
-
-	\begin{equation}	
-		Q = \sum^n_{i=1} \frac{x_i - \bar{x}}{y_i - \bar{y}}
-		\label{equation1}
-	\end{equation}	
-
-
-\section{Format Referensi/Pustaka}
-
-	Setiap referensi/pustaka diberikan penomoran dan ditulis di dalam kurung siku, misalnya [1]. Semua item referensi berukuran font 8 pt. Silakan gunakan gaya tulisan miring dan biasa untuk membedakan berbagai perbedaan dasar seperti yang ditunjukkan pada bagian Referensi. Menggunakan inisial nama pertama penulis dan nama lengkap mereka yang terakhir. Misalnya "D. Harahap".
-
-	Ketika mengacu pada item referensi, silakan menggunakan nomor referensi saja, misalnya [2]. Jangan menggunakan "Ref. [3]" atau "Referensi [3]", kecuali pada awal kalimat, misalnya "Referensi [3] menunjukkan bahwa ...". Dalam penggunaan beberapa referensi masing-masing nomor diketik dengan kurung terpisah (misalnya [2], [3], [4] - [6]).
-
-	Sebagai catatan, penggunaan langsung referensi yang dicontohkan pada \textit{template} ini dapat dilihat pada Daftar Pustaka. \cite{pustaka1,pustaka2,pustaka3,pustaka4,pustaka5}
-
-\subsection{Buku}
-
-	\textit{Elemen kutipan:}
-
-	Nama penulis pertama atau inisial. Nama atau nama organisasi, Judul buku diikuti oleh fullstop jika tidak ada pernyataan edisi, atau koma jika ada pernyataan edisi, ed., Edisi (kecuali yang pertama). Tempat kota publikasi : penerbit, tahun terbit.
-
-	\textit{Contoh \cite{pustaka1}:}
-
-	A. E. Brouwer and W. H. Haemers, Spectra of Graphs. New York: Springer, 2012.
-
-\subsection{Bagian/Bab dalam Buku}
-
-	\textit{Elemen kutipan:}
-
-	Nama penulis pertama atau inisial. Nama keluarga, "Judul bab," Judul dari buku, ed, Edisi. (Kecuali yang pertama)  jilid, volume jika tersedia, Ed. Editor jika tersedia, Tempat publikasi: Penerbit, Tahun Terbit, pp. Bab atau halaman pertama dan terakhir artikel.
-
-	\textit{Contoh \cite{pustaka2}:}
-
-	P. Shakarian, A. Bhatnagar, A. Aleali, E. Shaabani, and R. Guo, The Independent Cascade and Linear Threshold Models. Cham: Springer International Publishing, 2015, pp. 35–48.
-
-\subsection{Jurnal}
-
-	\textit{Elemen kutipan:}
-
-	Nama penulis pertama atau inisial. Nama Keluarga, "Judul artikel," Judul Jurnal, vol.volume (nomor penerbitan), halaman pertama dan halaman terakhir artikel, tanggal bulan tahun penerbitan jika tersedia.
-
-	\textit{Contoh \cite{pustaka3}:}
-
-	C. Chen, H. Tong, B. A. Prakash, C. E. Tsourakakis, T. Eliassi-Rad, C. Faloutsos, and D. H. Chau, “Node immunization on large graphs: Theory and algorithms,” IEEE Transaction on Knowledge and Data Engineering, vol. 28, no. 1, pp. 113–126, Jan 2016.
-
-\subsection{Seminar/\textit{Proceeding}}
-
-	\textit{Elemen kutipan:}
-
-	Nama penulis pertama atau inisial. Nama keluarga, "Judul paper," dalam seminar Judul, Nama Depan Nama Terakhir Editor jika tersedia, Ed. Tempat Publikasi: Penerbit jika tersedia,  tanggal diterbitkan , halaman pertama dan terakhir paper.
-
-	\textit{Contoh \cite{pustaka4}:}
-
-	A. W. Wijayanto and T. Murata, “Learning adaptive graph protection strategy on dynamic networks via reinforcement learning,” in 2018 IEEE/WIC/ACM International Conference on Web Intelligence (WI), ser. WI 2018. New York, USA: IEEE, Dec 2018, pp. 534–539.
-
-\subsection{Sumber Elektronik (\textit{Website})}
-
-	\textit{Elemen kutipan:}
-
-	Penulis. (tahun, bulan). Judul. [Jenis Perantara]. Available : site/path/file.
-
-	\textit{Contoh \cite{pustaka5}:}
-
-	Facebook. (2017, 3) How does news feed decide which stories to show? [Online]. Available: https://www.facebook.com/ help/166738576721085
-	
 % Elemen daftar pustaka yang disimpan dalam file Proposal.bib
-\bibliographystyle{IEEEtran}
-\bibliography{Proposal}
 
 \end{document}
